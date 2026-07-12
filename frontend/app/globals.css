@@ -1,11 +1,20 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: #0f172a;
-  color: #f8fafc;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
 }
 
-* {
-  box-sizing: inherit;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply min-h-screen bg-slate-950 text-slate-100 antialiased;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  @apply bg-cyan-500/40 text-white;
 }
