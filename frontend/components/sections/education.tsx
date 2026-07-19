@@ -24,12 +24,30 @@ export function EducationSection() {
         <div className="rounded-2xl border border-white/10 bg-slate-950/70 p-5">
           <h3 className="mb-2 text-lg font-semibold text-white">Experience</h3>
           <p className="text-slate-300 leading-7">
-            Built modern web applications with a focus on clean interfaces, reusable components, and reliable end-to-end delivery.
+            Completed internships and training programs with practical experience in mobile app development, pharmacy ecosystem workflows, and applied software engineering.
           </p>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-3">
+              <p className="mb-2 text-sm font-medium text-white">IoT Training Certificate</p>
+              <img
+                src="/Nielit%20Intership.jpeg"
+                alt="IoT Certificate"
+                className="h-40 w-full rounded-2xl object-cover"
+              />
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-3">
+              <p className="mb-2 text-sm font-medium text-white">React Native Internship Certificate</p>
+              <img
+                src="/Software%20world%20intership.jpeg"
+                alt="Internship Certificate"
+                className="h-40 w-full rounded-2xl object-cover"
+              />
+            </div>
+          </div>
           <ul className="mt-4 space-y-2 text-sm text-slate-400">
-            <li>• Developed responsive front-end experiences using React and Next.js</li>
-            <li>• Implemented backend APIs with Node.js and integrated them with products</li>
-            <li>• Collaborated with teams to refine requirements, improve UX, and ship valuable features</li>
+            <li>• Built practical mobile and web solutions while learning React Native, PHP, and REST APIs</li>
+            <li>• Gained real-world experience through project-driven internship work</li>
+            <li>• Strengthened problem solving by applying technical training toward product delivery</li>
           </ul>
         </div>
       </div>
