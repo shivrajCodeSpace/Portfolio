@@ -10,14 +10,14 @@ const skills = [
     name: "DSA IN C++",
     level: 40,
     description:
-      "Build modern full-stack applications using the Next.js App Router.",
+      "DSA in C++ helps us learn how to store and manage data properly. It includes data structures like arrays, stacks, queues, trees, and graphs. It also teaches algorithms for searching, sorting, and solving problems. Learning DSA improves programming logic and problem-solving skills.",
     github: "https://github.com/shivrajCodeSpace/DSA-in-C-",
   },
   {
     name: "OPPS",
     level: 10,
     description:
-      "Develop reusable UI components and scalable frontend applications.",
+      "Object-Oriented Programming is a programming paradigm built around the concept of objects. Each object combines data and the operations that work on that data, enabling developers to model real-world things, organize code clearly, and build systems that are easier to maintain.",
     github: "https://github.com/shivrajCodeSpace/OPPS-In-Cpp",
   },
 //   {

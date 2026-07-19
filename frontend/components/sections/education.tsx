@@ -16,7 +16,7 @@ export function EducationSection() {
           </p>
           <ul className="mt-4 space-y-2 text-sm text-slate-400">
             <li>• 10th grade completed in 2023 at PM SHRI Ganganagar H.S School</li>
-            <li>• Diploma completed in 2026 from Gomati District Polytechnic</li>
+            <li>• Diploma completed in Computer Science and Technology 2026 from Gomati District Polytechnic</li>
             <li>• Prepared for engineering and software development studies through focused coursework</li>
           </ul>
         </div>
