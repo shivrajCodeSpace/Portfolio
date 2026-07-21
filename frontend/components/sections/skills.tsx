@@ -1,63 +1,30 @@
-import Link from "next/link";
-import {
-  Code2,
-  Github,
-  ExternalLink,
-} from "lucide-react";
+import Link from 'next/link';
+import { Code2, Github, ExternalLink } from 'lucide-react';
 
-const skills = [
-  {
-    name: "DSA IN C++",
-    level: 40,
-    description:
-      "DSA in C++ helps us learn how to store and manage data properly. It includes data structures like arrays, stacks, queues, trees, and graphs. It also teaches algorithms for searching, sorting, and solving problems. Learning DSA improves programming logic and problem-solving skills.",
-    github: "https://github.com/shivrajCodeSpace/DSA-in-C-",
-  },
-  {
-    name: "OPPS",
-    level: 10,
-    description:
-      "Object-Oriented Programming is a programming paradigm built around the concept of objects. Each object combines data and the operations that work on that data, enabling developers to model real-world things, organize code clearly, and build systems that are easier to maintain.",
-    github: "https://github.com/shivrajCodeSpace/OPPS-In-Cpp",
-  },
-//   {
-//     name: "TypeScript",
-//     level: 90,
-//     description:
-//       "Create type-safe, maintainable, and scalable applications.",
-//     github: "https://github.com/yourusername/typescript-projects",
-//   },
-//   {
-//     name: "Node.js",
-//     level: 85,
-//     description:
-//       "Develop REST APIs and backend services using Express.js.",
-//     github: "https://github.com/yourusername/nodejs-projects",
-//   },
-//   {
-//     name: "MongoDB",
-//     level: 80,
-//     description:
-//       "Design scalable NoSQL databases using MongoDB Atlas.",
-//     github: "https://github.com/yourusername/mongodb-projects",
-//   },
-//   {
-//     name: "UI / UX Design",
-//     level: 88,
-//     description:
-//       "Design clean, responsive and user-friendly interfaces.",
-//     github: "https://github.com/yourusername/design-projects",
-//   },
-//   {
-//     name: "Full Stack Development",
-//     level: 92,
-//     description:
-//       "Complete frontend + backend web application development.",
-//     github: "https://github.com/yourusername/fullstack-projects",
-//   },
+type SkillItem = { name: string; level: number; description?: string; github?: string };
+type SkillsSectionProps = {
+  title?: string;
+  skills?: SkillItem[];
+};
+
+const defaultSkills: SkillItem[] = [
+  // {
+  //   name: 'DSA IN C++',
+  //   level: 40,
+  //   description:
+  //     'DSA in C++ helps us learn how to store and manage data properly. It includes data structures like arrays, stacks, queues, trees, and graphs. It also teaches algorithms for searching, sorting, and solving problems. Learning DSA improves programming logic and problem-solving skills.',
+  //   github: 'https://github.com/shivrajCodeSpace/DSA-in-C-',
+  // },
+  // {
+  //   name: 'OPPS',
+  //   level: 10,
+  //   description:
+  //     'Object-Oriented Programming is a programming paradigm built around the concept of objects. Each object combines data and the operations that work on that data, enabling developers to model real-world things, organize code clearly, and build systems that are easier to maintain.',
+  //   github: 'https://github.com/shivrajCodeSpace/OPPS-In-Cpp',
+  // },
 ];
 
-export function SkillsSection() {
+export function SkillsSection({ title = 'Technical Skills', skills = defaultSkills }: SkillsSectionProps) {
   return (
     <section
       id="skills"
@@ -120,17 +87,19 @@ export function SkillsSection() {
             </div>
 
             {/* GitHub Button */}
-            <Link
-              href={skill.github}
-              target="_blank"
-              className="flex items-center justify-center gap-2 rounded-xl border border-cyan-500/30 bg-cyan-500/10 px-4 py-3 text-sm font-medium text-cyan-300 transition-all hover:bg-cyan-500 hover:text-white"
-            >
-              <Github size={18} />
+            {skill.github ? (
+              <Link
+                href={skill.github as string}
+                target="_blank"
+                className="flex items-center justify-center gap-2 rounded-xl border border-cyan-500/30 bg-cyan-500/10 px-4 py-3 text-sm font-medium text-cyan-300 transition-all hover:bg-cyan-500 hover:text-white"
+              >
+                <Github size={18} />
 
-              View GitHub Repository
+                View GitHub Repository
 
-              <ExternalLink size={16} />
-            </Link>
+                <ExternalLink size={16} />
+              </Link>
+            ) : null}
           </div>
         ))}
       </div>

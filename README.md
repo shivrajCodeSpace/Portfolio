@@ -35,29 +35,60 @@ A modern, professional portfolio website built with Next.js, TypeScript, Tailwin
 
 ## Getting Started
 
-### Frontend
+### 1) Install dependencies
 
 ```bash
 cd frontend
 npm install
-npm run dev
-```
 
-Open http://localhost:3000
-
-### Backend
-
-```bash
-cd backend
+cd ../backend
 npm install
+```
+
+### 2) Run the project
+
+From the project root, start both apps together:
+
+```bash
+cd ..
 npm run dev
 ```
 
-The backend health endpoint is available at:
+This will launch:
+- Frontend: http://localhost:3000 (or the next available port shown in the terminal)
+- Backend: http://localhost:5000
+
+Useful endpoints:
 
 ```bash
-http://localhost:5000/Portfolio
+http://localhost:5000/api/health
+http://localhost:5000/api/profile
 ```
+
+You can also run them separately:
+
+```bash
+npm run dev:frontend
+npm run dev:backend
+```
+
+## Project Progress
+
+Overall completion: about 85% of the initial portfolio MVP is done.
+
+### Completed
+- Modern portfolio landing page with polished sections
+- About, skills, projects, education, and contact sections
+- Responsive UI with animations and improved visuals
+- Express backend with health and profile API routes
+- Frontend connected to backend data for the main portfolio content
+- One-command startup script for local development
+
+### In Progress / Next Up
+- Admin dashboard and content management
+- Database integration for dynamic portfolio updates
+- Authentication and role-based access
+- Deployment to cloud hosting
 
 ## Current Milestones
 

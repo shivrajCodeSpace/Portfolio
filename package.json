@@ -1,0 +1,9 @@
+{
+  "name": "portfolio-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "node start-dev.js",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "npm --prefix backend run dev"
+  }
+}
