@@ -56,7 +56,7 @@ npm run dev
 The backend health endpoint is available at:
 
 ```bash
-http://localhost:5000/health
+http://localhost:5000/
 ```
 
 ## Current Milestones
