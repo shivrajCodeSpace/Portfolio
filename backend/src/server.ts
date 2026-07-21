@@ -13,6 +13,7 @@ type SkillItem = {
 type ProjectItem = {
   title: string;
   description: string;
+  github?: string;
 };
 
 type CertificateItem = {
@@ -131,6 +132,7 @@ const fallbackPortfolioData: PortfolioData = {
           'Object-Oriented Programming is a programming paradigm built around the concept of objects. Each object combines data and the operations that work on that data, enabling developers to model real-world things, organize code clearly, and build systems that are easier to maintain.',
         github: 'https://github.com/shivrajCodeSpace/OPPS-In-Cpp',
       },
+      
     ],
   },
   projects: {
@@ -140,11 +142,19 @@ const fallbackPortfolioData: PortfolioData = {
         title: 'ACADEMIA',
         description:
           'College Management System built during the 2nd year of diploma, focused on student records, attendance, course schedules, and administrative workflows.',
+        // github: 'https://github.com/shivrajCodeSpace/Academia',
       },
       {
         title: 'DOORMED',
         description:
           'Pharmacy-based ecosystem developed after the 3rd year, designed to manage medicine catalogs, orders, customer records, and delivery coordination.',
+        // github: 'https://github.com/shivrajCodeSpace/Doormed',
+      },
+      {
+        title: 'Portfolio',
+        description:
+          'A modern, professional portfolio website built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and an Express.js backend. This project is being developed as a production-ready personal brand platform for showcasing experience, projects, skills, and contact information.',
+        github: 'https://github.com/shivrajCodeSpace/Portfolio',
       },
     ],
   },

@@ -55,6 +55,7 @@ export default function AdminPage() {
   const [isLoggingIn, setIsLoggingIn] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isLoadingVisitors, setIsLoadingVisitors] = useState(false);
+  const [activeProjectInputIndex, setActiveProjectInputIndex] = useState<number | null>(null);
 
   async function loadAdminData(authToken: string) {
     const response = await fetch('/api/admin/profile', {
@@ -286,13 +287,18 @@ export default function AdminPage() {
   };
 
   const addProject = () => {
-    setFormData((prev) => ({
-      ...prev,
-      projects: {
-        ...prev.projects,
-        items: [...prev.projects.items, { title: '', description: '' }],
-      },
-    }));
+    setFormData((prev) => {
+      const nextIndex = prev.projects.items.length;
+      setActiveProjectInputIndex(nextIndex);
+
+      return {
+        ...prev,
+        projects: {
+          ...prev.projects,
+          items: [...prev.projects.items, { title: '', description: '', github: '' }],
+        },
+      };
+    });
   };
 
   const removeProject = (index: number) => {
@@ -662,7 +668,7 @@ export default function AdminPage() {
             />
             <div className="space-y-4">
               {formData.skills.items.map((skill, index) => (
-                <EditableItem key={`${skill.name}-${index}`}>
+                <EditableItem key={`skill-${index}`}>
                   <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_8rem]">
                     <TextInput
                       label="Skill name"
@@ -714,16 +720,22 @@ export default function AdminPage() {
             />
             <div className="space-y-4">
               {formData.projects.items.map((project, index) => (
-                <EditableItem key={`${project.title}-${index}`}>
+                <EditableItem key={`project-${index}`}>
                   <TextInput
                     label="Project title"
                     value={project.title}
+                    autoFocus={activeProjectInputIndex === index}
                     onChange={(event) => updateProject(index, 'title', event.target.value)}
                   />
                   <TextArea
                     label="Description"
                     value={project.description}
                     onChange={(event) => updateProject(index, 'description', event.target.value)}
+                  />
+                  <TextInput
+                    label="GitHub URL"
+                    value={project.github || ''}
+                    onChange={(event) => updateProject(index, 'github', event.target.value)}
                   />
                   <RemoveButton label="Remove Project" onClick={() => removeProject(index)} />
                 </EditableItem>

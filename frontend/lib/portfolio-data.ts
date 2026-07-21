@@ -8,6 +8,7 @@ export type SkillItem = {
 export type ProjectItem = {
   title: string;
   description: string;
+  github?: string;
 };
 
 export type CertificateItem = {
@@ -107,11 +108,13 @@ export const fallbackData: PortfolioData = {
         title: 'ACADEMIA',
         description:
           'College Management System built during the 2nd year of diploma, focused on student records, attendance, course schedules, and administrative workflows.',
+        github: 'https://github.com/shivrajCodeSpace/Academia',
       },
       {
         title: 'DOORMED',
         description:
           'Pharmacy-based ecosystem developed after the 3rd year, designed to manage medicine catalogs, orders, customer records, and delivery coordination.',
+        github: 'https://github.com/shivrajCodeSpace/Doormed',
       },
     ],
   },

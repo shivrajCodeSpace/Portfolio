@@ -1,21 +1,38 @@
 # Portfolio Web Application
 
-A modern, professional portfolio website built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and an Express.js backend. This project is being developed as a production-ready personal brand platform for showcasing experience, projects, skills, and contact information.
+A modern, multi-part portfolio platform built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and an Express.js backend. The project now includes a public portfolio experience, a visitor registration flow, and an admin dashboard for updating content and viewing visitor records.
 
-## What We Built So Far
+## What this project includes
 
-- Modern landing page with a polished hero section
-- Professional profile overview and experience summary
-- Responsive layout for desktop and mobile
-- Reusable layout structure with navigation and footer
-- Dark-themed portfolio UI with animated transitions
-- Profile image support on the homepage
-- Frontend and backend foundations ready for future expansion
+- A polished landing page for entering the portfolio experience
+- A visitor registration page before accessing the portfolio
+- A public portfolio page with sections for hero, about, skills, projects, education, and contact
+- An admin dashboard for editing portfolio content and viewing visitor records
+- A backend API that stores portfolio content and visitor submissions
+- A one-command startup script for running frontend and backend together
 
-## Tech Stack
+## Main features
+
+### Public portfolio experience
+- Visitors first register on the registration page
+- Once registered, they can open the portfolio and view the content
+- The portfolio page is designed to feel modern and professional with responsive layouts and smooth visuals
+
+### Admin panel
+- Admin can log in with a password
+- Admin can edit portfolio content directly from the dashboard
+- Admin can view visitor records and track who accessed the portfolio
+- Changes are saved through the backend and reflected in the portfolio UI
+
+### Backend
+- Express.js server with REST endpoints
+- Portfolio content is stored and updated through JSON data files
+- Visitor registration data is also stored for admin review
+
+## Tech stack
 
 ### Frontend
-- Next.js (App Router)
+- Next.js
 - React
 - TypeScript
 - Tailwind CSS
@@ -27,13 +44,17 @@ A modern, professional portfolio website built with Next.js, TypeScript, Tailwin
 - Express.js
 - TypeScript
 
-## Project Structure
+## Project structure
 
 - frontend/ - Next.js frontend application
-- backend/ - Express.js API server
-- docs/ - Architecture and project notes
+- frontend/app/ - routes for welcome, register, portfolio, and admin pages
+- frontend/components/ - reusable UI sections and layout components
+- frontend/lib/ - shared portfolio and visitor data models
+- backend/ - Express.js server and API logic
+- backend/src/ - backend source code
+- start-dev.js - script to start frontend and backend together
 
-## Getting Started
+## Getting started
 
 ### 1) Install dependencies
 
@@ -47,70 +68,32 @@ npm install
 
 ### 2) Run the project
 
-From the project root, start both apps together:
+From the project root, run:
 
 ```bash
-cd ..
 npm run dev
 ```
 
-This will launch:
-- Frontend: http://localhost:3000 (or the next available port shown in the terminal)
-- Backend: http://localhost:5000
+This starts both applications together.
 
-Useful endpoints:
+### 3) Open the app
 
-```bash
-http://localhost:5000/api/health
-http://localhost:5000/api/profile
-```
+- Frontend: http://localhost:3000
+- Backend health check: http://localhost:5000/api/health
+- Portfolio API: http://localhost:5000/api/profile
 
-You can also run them separately:
+## Current progress
 
-```bash
-npm run dev:frontend
-npm run dev:backend
-```
+The project is now in a strong MVP stage with:
+- a working public portfolio experience
+- visitor registration and storage
+- admin editing support
+- backend persistence for portfolio content and visitors
 
-## Project Progress
+## Upcoming improvements
 
-Overall completion: about 85% of the initial portfolio MVP is done.
-
-### Completed
-- Modern portfolio landing page with polished sections
-- About, skills, projects, education, and contact sections
-- Responsive UI with animations and improved visuals
-- Express backend with health and profile API routes
-- Frontend connected to backend data for the main portfolio content
-- One-command startup script for local development
-
-### In Progress / Next Up
-- An admin dashboard and content management web app are now being developed so portfolio content can be updated easily from one place
-- Database integration for dynamic portfolio updates
-- Authentication and role-based access
-- Deployment to cloud hosting
-
-## Current Milestones
-
-1. Build a clean and modern portfolio foundation
-2. Create a responsive landing page experience
-3. Add reusable UI components and animations
-4. Prepare frontend and backend architecture for future features
-5. Extend into admin dashboard, CMS, and database integration
-
-## What We Learned During Development
-
-- How to scaffold a modern Next.js TypeScript app
-- How to structure a responsive UI with Tailwind CSS
-- How to use Framer Motion for smooth animations
-- How to configure a TypeScript-based Express backend
-- How to serve local images correctly in a web app
-- How to organize a professional project structure for future scaling
-
-## Future Plans
-
-- Add multiple portfolio pages such as About, Projects, Experience, and Contact
-- Implement admin dashboard and authentication
-- Connect MongoDB for dynamic content
-- Add resume upload and blog features
-- Deploy to Vercel and Render
+- Add stronger authentication and role-based access
+- Add image upload support for portfolio media
+- Add database integration instead of JSON file storage
+- Add richer admin features such as drag-and-drop section editing
+- Deploy the app to a live hosting platform

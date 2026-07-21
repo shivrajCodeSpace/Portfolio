@@ -7,3 +7,5 @@ dist/
 .env.*.local
 npm-debug.log*
 .DS_Store
+.agents
+backend/data/*.json
