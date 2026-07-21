@@ -85,7 +85,7 @@ Overall completion: about 85% of the initial portfolio MVP is done.
 - One-command startup script for local development
 
 ### In Progress / Next Up
-- Admin dashboard and content management
+- An admin dashboard and content management web app are now being developed so portfolio content can be updated easily from one place
 - Database integration for dynamic portfolio updates
 - Authentication and role-based access
 - Deployment to cloud hosting
