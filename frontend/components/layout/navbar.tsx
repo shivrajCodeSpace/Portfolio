@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -14,7 +15,9 @@ const links = [
 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
+  const isPortfolioPage = pathname === "/portfolio";
 
   useEffect(() => setMounted(true), []);
 
@@ -25,11 +28,13 @@ export function Navbar() {
           Portfolio
         </Link>
         <div className="flex items-center gap-4">
-          {links.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm text-slate-300 hover:text-white">
-              {link.label}
-            </Link>
-          ))}
+          {isPortfolioPage
+            ? links.map((link) => (
+                <Link key={link.href} href={link.href} className="text-sm text-slate-300 hover:text-white">
+                  {link.label}
+                </Link>
+              ))
+            : null}
           <button
             type="button"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

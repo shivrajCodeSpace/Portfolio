@@ -30,7 +30,6 @@ export function SkillsSection({ title = 'Technical Skills', skills = defaultSkil
       id="skills"
       className="rounded-3xl border border-white/10 bg-slate-900/60 p-6 backdrop-blur-xl"
     >
-      {/* Section Header */}
       <div className="mb-8 flex items-center gap-3">
         <div className="rounded-xl bg-cyan-500/20 p-2">
           <Code2 className="text-cyan-400" size={22} />
@@ -38,17 +37,15 @@ export function SkillsSection({ title = 'Technical Skills', skills = defaultSkil
 
         <div>
           <h2 className="text-3xl font-bold text-white">
-            Technical Skills
+            {title}
           </h2>
 
           <p className="text-sm text-slate-400">
-            Click any skill to explore real GitHub projects demonstrating my
-            experience.
+            Practical skills backed by real project work.
           </p>
         </div>
       </div>
 
-      {/* Skills Grid */}
       <div className="grid gap-6 md:grid-cols-2">
         {skills.map((skill) => (
           <div
